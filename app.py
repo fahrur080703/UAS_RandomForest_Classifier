@@ -7,6 +7,10 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report, confusion_matrix
 from sklearn.preprocessing import OneHotEncoder
 
+# Set up the Streamlit app
+st.set_page_config(page_title="Aplikasi Klasifikasi Random Forest", layout="wide")
+st.title("Aplikasi Klasifikasi Random Forest")
+
 # Load the dataset
 @st.cache_data
 def load_data():
@@ -15,10 +19,6 @@ def load_data():
     return data
 
 data = load_data()
-
-# Set up the Streamlit app
-st.set_page_config(page_title="Aplikasi Klasifikasi Random Forest", layout="wide")
-st.title("Aplikasi Klasifikasi Random Forest")
 
 # Initialize variables
 model = None
@@ -105,7 +105,7 @@ elif option == 'Pelatihan Model':
     st.subheader("Buat Prediksi")
     
     # Input fields for the features
-    age = st.number_input("Usia", min_value=0, max_value=100, value=30)
+    age = st.number_input("Usia", min_value =0, max_value=100, value=30)
     sex = st.selectbox("Jenis Kelamin", options=['F', 'M'])
     bp = st.selectbox("Tekanan Darah", options=['NORMAL', 'LOW', 'HIGH'])
     cholesterol = st.selectbox("Kadar Kolesterol", options=['NORMAL', 'HIGH'])
