@@ -97,7 +97,7 @@ elif option == 'Pelatihan Model':
     y_pred = model.predict(X_test)
     st.write("Laporan Klasifikasi:")
     st.text(classification_report(y_test, y_pred))
-    st.write("Matriks Kebingungan:")
+    st.write("Confusion Matrix.:")
     cm = confusion_matrix(y_test, y_pred)
     st.write(cm)
 
